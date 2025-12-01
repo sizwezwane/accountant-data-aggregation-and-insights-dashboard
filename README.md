@@ -1,1 +1,1 @@
-# accountant-data-aggregation-and-insights-dashboard
+# accountant-data-aggregation

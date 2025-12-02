@@ -10,6 +10,7 @@ ENV/
 *.egg-info/
 dist/
 build/
+get-pip.py
 
 # Database
 *.db

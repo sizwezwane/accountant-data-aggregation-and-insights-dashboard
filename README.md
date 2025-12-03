@@ -51,52 +51,37 @@ This project is a full-stack dashboard application for aggregating and displayin
 ## Setup Instructions
 
 ### Prerequisites
-- Python 3.12+
-- Node.js 18+ and npm
+- Docker and Docker Compose
 - Git
 
-### Backend Setup
+### Running with Docker
 
-1. Navigate to the backend directory:
+1. Start the application:
 ```bash
-cd backend
+docker-compose up --build
 ```
 
-2. Create a virtual environment and install dependencies:
-```bash
-python3 -m venv venv --without-pip
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-./venv/bin/python get-pip.py
-./venv/bin/pip install -r requirements.txt
-```
+2. Access the application:
+- **Frontend Dashboard**: `http://localhost:3000`
+- **Backend API**: `http://localhost:8000`
+- **API Documentation**: `http://localhost:8000/docs`
 
-3. Start the backend server:
-```bash
-./venv/bin/uvicorn app.main:app --reload --port 8000
-```
+The application will automatically set up the PostgreSQL database and seed it with mock data.
 
-The API will be available at `http://localhost:8000`
+### Manual Setup (Alternative)
 
-API Documentation: `http://localhost:8000/docs`
+If you prefer to run locally without Docker:
 
-### Frontend Setup
+#### Backend
+1. Navigate to `backend/`
+2. Create venv: `python3 -m venv venv`
+3. Install deps: `./venv/bin/pip install -r requirements.txt`
+4. Run: `./venv/bin/uvicorn app.main:app --reload`
 
-1. Navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:3000`
+#### Frontend
+1. Navigate to `frontend/`
+2. Install deps: `npm install`
+3. Run: `npm run dev`
 
 ## API Endpoints
 
@@ -149,8 +134,7 @@ accountant-data-aggregation-and-insights-dashboard/
 │   │   └── theme/
 │   │       └── theme.ts     # MUI theme configuration
 │   └── package.json
-├── README.md
-└── SOLUTION.md
+└── README.md
 ```
 
 ## Development Notes

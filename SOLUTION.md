@@ -12,6 +12,7 @@ This project is a full-stack application designed to aggregate financial data fr
     *   **PostgreSQL** (Production/Docker): Used for robust, persistent data storage.
     *   **SQLite** (Development/Fallback): Used for quick local iteration.
     *   **ORM**: SQLAlchemy is used for database abstraction, allowing seamless switching between DB engines.
+    *   **Migrations**: Alembic is configured for handling database schema changes and migrations.
 *   **Data Simulation**: A seeding script (`seed_data`) populates the database with realistic mock data using the `Faker` library on startup.
 *   **Observability**: A custom logging middleware/helper (`log_activity`) tracks key events (agent requests, AI queries) and stores them in the database for the observability widget.
 

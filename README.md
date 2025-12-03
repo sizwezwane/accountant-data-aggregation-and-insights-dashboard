@@ -10,7 +10,8 @@ This project is a full-stack dashboard application for aggregating and displayin
 - **Python 3.12+**
 - **FastAPI** - Modern, fast API framework
 - **SQLAlchemy** - ORM for database operations
-- **SQLite** - In-memory database for session persistence
+- **PostgreSQL** - Primary database (used in Docker setup)
+- **SQLite** - Fallback database for local development
 - **Faker** - Mock data generation
 
 ### Frontend
@@ -58,7 +59,7 @@ This project is a full-stack dashboard application for aggregating and displayin
 
 1. Start the application:
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 2. Access the application:
@@ -82,6 +83,20 @@ If you prefer to run locally without Docker:
 1. Navigate to `frontend/`
 2. Install deps: `npm install`
 3. Run: `npm run dev`
+
+## Database Configuration
+
+The application supports two database modes:
+
+1.  **PostgreSQL (Recommended)**:
+    *   Default when running with Docker.
+    *   Requires a running PostgreSQL instance.
+    *   Configured via `DATABASE_URL` environment variable.
+
+2.  **SQLite (Dev/Fallback)**:
+    *   Useful for quick local development without Docker.
+    *   Enabled by setting `USE_SQLITE=true` in `backend/.env`.
+    *   Creates a local `sql_app.db` file.
 
 ## API Endpoints
 
@@ -111,6 +126,8 @@ accountant-data-aggregation-and-insights-dashboard/
 │   │   ├── models.py        # SQLAlchemy models
 │   │   ├── schemas.py       # Pydantic schemas
 │   │   └── database.py      # Database configuration
+│   ├── Dockerfile           # Backend Docker image
+│   ├── init_db.py           # Database initialization script
 │   └── requirements.txt
 ├── frontend/
 │   ├── src/
@@ -133,7 +150,10 @@ accountant-data-aggregation-and-insights-dashboard/
 │   │   │   └── ThemeRegistry.tsx
 │   │   └── theme/
 │   │       └── theme.ts     # MUI theme configuration
+│   ├── Dockerfile           # Frontend Docker image
 │   └── package.json
+├── docker-compose.yml       # Docker orchestration
+├── DATABASE_SETUP.md        # Detailed DB setup guide
 └── README.md
 ```
 

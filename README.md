@@ -178,7 +178,3 @@ For production deployment, consider:
 - Use environment variables for configuration
 - Implement database migrations
 - Add unit and integration tests
-
-## License
-
-This project was created as a technical assignment for Adsum.

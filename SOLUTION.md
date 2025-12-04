@@ -50,7 +50,7 @@ This project is a full-stack application designed to aggregate financial data fr
 
 ## Video Walkthrough
 
-[Link to Video Recording] (To be added)
+[Watch the Video Walkthrough](https://www.loom.com/share/8c3a915125844f0496dea596b0a0bd6f)
 
 ## Future Improvements
 
